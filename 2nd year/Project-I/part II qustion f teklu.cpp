@@ -1,72 +1,82 @@
 #include <iostream>
+#include <cmath>
+#include <stdlib.h>
 using namespace std;
 
 int main()
 {
-    for (int i = 0; i < 7; i++)
+    int n;
+    cout << "enter size:";
+    cin >> n;
+    for (int i = 0; i < (n / 2); i++)
     {
         if (i == 0)
         {
-            for (int j = i; j < 8; j++)
+            for (int j = 0; j < (n / 2) + 1; j++)
             {
-                cout << char(j + 65)<<" ";
+                cout << char(j + 65) << " ";
             }
-            for (int k = i + 6; k >= 0; k--)
+            for (int j = (n / 2) - 1; j >= 0; j--)
             {
-                cout << char(k + 65)<<" ";
+                cout << char(j + 65) << " ";
             }
             cout << endl;
         }
-        for (int k = 0; k <= 6 - i; k++)
+        else
         {
-            cout << char(k + 65)<<" ";
+            for (int j = 0; j < (n / 2) + 1 - i; j++)
+            {
+                cout << char(j + 65) << " ";
+            }
+            for (int j = 1; j <= i; j++)
+            {
+                cout << "  ";
+            }
+            for (int j = 2; j <= i; j++)
+            {
+                cout << "  ";
+            }
+            for (int j = (n / 2) - i; j >= 0; j--)
+            {
+                cout << char(j + 65) << " ";
+            }
+            cout << endl;
         }
-        for (int j = 0; j <= i; j++)
-        {
-            cout << "  ";
-        }
-        for (int j = 1; j <= i; j++)
-        {
-            cout << "  ";
-        }
-        for (int m = 6 - i; m >= 0; m--)
-        {
-            cout << char(m + 65)<<" ";
-        }
-        cout << endl;
     }
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < (n / 2) + 1; i++)
     {
-        for (int j = 0; j <= i + 1; j++)
+        if (i < (n / 2))
         {
-            cout << char(j + 65)<<" ";
-        }
-        for (int k = 6 - i; k > 0; k--)
-        {
-            cout << "  ";
-        }
-        for (int k = 6 - i; k > 1; k--)
-        {
-            cout << "  ";
-        }
-        for (int m = i + 1; m >= 0; m--)
-        {
-            cout << char(m + 65)<<" ";
-        }
-        cout << endl;
-        if (i == 5)
-        {
-            for (int j = 0; j < 8; j++)
+            for (int j = 0; j <= i; j++)
             {
-                cout << char(j + 65)<<" ";
+                cout << char(j + 65) << " ";
             }
-            for (int k = 6; k >= 0; k--)
+            for (int j = (n / 2) - 1 - i; j >= 0; j--)
             {
-                cout << char(k + 65)<<" ";
+                cout << "  ";
+            }
+            for (int j = (n / 2) - 2 - i; j >= 0; j--)
+            {
+                cout << "  ";
+            }
+            for (int j = i; j >= 0; j--)
+            {
+                cout << char(j + 65) << " ";
+            }
+            cout << endl;
+        }
+        else if (i == (n / 2))
+        {
+            for (int j = 0; j < (n / 2) + 1; j++)
+            {
+                cout << char(j + 65) << " ";
+            }
+            for (int j = (n / 2) - 1; j >= 0; j--)
+            {
+                cout << char(j + 65) << " ";
             }
             cout << endl;
         }
     }
-
     return 0;
 }
