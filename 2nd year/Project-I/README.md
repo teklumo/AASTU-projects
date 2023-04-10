@@ -1,3 +1,3 @@
-PART I  -----Problem solving  \n
-PART II -----Pattern Printing
+# PART I  -----Problem solving 
+# PART II -----Pattern Printing
 
